@@ -8,7 +8,8 @@
     <name>SpringBoot-stu Maven Webapp</name>
     <url>https://maven.apache.org</url>
     <modules>
-        <module>01.FastStart</module>
+        <module>01FastStart</module>
+        <module>02Profile</module>
     </modules>
 
     <!--继承的父工程，已经定义好所有版本号-->
@@ -23,6 +24,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
     <build>
