@@ -13,7 +13,8 @@
         <module>03Junit</module>
         <module>04mybatis</module>
         <module>05Logger</module>
-        <module>06Resouces</module>
+        <module>06Resources</module>
+        <module>07Thymeleaf</module>
     </modules>
 
     <!--继承的父工程，已经定义好所有版本号-->

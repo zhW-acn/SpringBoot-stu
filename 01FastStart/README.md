@@ -51,3 +51,6 @@ SpringBoot起步依赖：
 #### 再总结
 
 ![](img/自动配置原理.png)
+
+
+### SpringBoot对SpringMVC的自动配置
