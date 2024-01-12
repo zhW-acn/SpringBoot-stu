@@ -31,6 +31,20 @@ SpringBoot配置文件和在同一目录下的优先级为`properties>yml>yaml`
 3. ConfigurationProperties注解定义配置类
    好处是在yml中有提示了，在该配置类里定义属性。前缀prefix代表这个配置类的名字
 
+|                        | @Value | @ConfigurationProperties |
+|------------------------|--------|--------------------------|
+| 松散语法绑定                 | 不支持    | 支持                       |
+| SpEL表达式【#{}】           | 支持     | 不支持                      |
+| JSR303数据校验【@Validated】 | 不支持    | 支持                       |
+
+@PropertySource注解：标记在配置类上。加载指定的properties文件，value指定位置
+
+
+@ImportResource注解：标记在启动类上。加载指定spring的xml文件，locations指定位置
+
+
+SB使用注解代替配置文件
+
 ### 多环境配置
 
 如何在生产环境中定义和切换配置
@@ -44,20 +58,21 @@ SpringBoot配置文件和在同一目录下的优先级为`properties>yml>yaml`
      profiles: dev
    ```
 2. 切换配置
-   
+
    在主配置文件中激活
    ```yaml
    spring:
      profiles:
        active: dev
    ```
-   
+
 3. 运维方面
    打成jar包后，要想切换环境配置，需要在命令`java -jar xxx.jar `后输入`--spring.profiles.active=xxx`以指定环境
 
-
 ### 内部配置文件优先级
+
 ./config/ > ./ > classpath:./config/ > classpath:./
 
 ### 外部配置文件
+
 运维。。。

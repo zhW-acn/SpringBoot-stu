@@ -47,3 +47,7 @@ SpringBoot起步依赖：
     - 总结 
    
         SpringBoot在启动的时候从类路径下的`META-INF/spring.factories`中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入到容器中
+3. 开启SpringBoot的debug=true可在控制台查看自动配置报告
+#### 再总结
+
+![](img/自动配置原理.png)

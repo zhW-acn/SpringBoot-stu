@@ -1,0 +1,10 @@
+logging:
+  level:
+    com.aca: trace
+  file: springboot.log # 当前项目下生成日志文件，可以以磁盘绝对路径指定
+#  path: /spring/log # 在当前磁盘下的根路径创建文件夹，使用spring.log作为默认文件名
+  pattern:
+    # 控制台输出格式
+    console: "%magenta(%d{yyyy-MM-dd HH:mm:ss}) [%thread] %green(%-5level) %cyan(%logger{100}) - %yellow(%msg%n)"
+    # 文件输出格式
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{100} - %msg%n"

@@ -9,10 +9,10 @@ speech:
   2: "Hello \n World" # 使用双引号识别转义，表示普通的字符串
 
 #map、对象
-person:
-  name: ${name}
-  age: 18
-  speech: ${speech.1}
+#person:
+#  name: ${name}
+#  age: 18
+#  speech: ${speech.1}
 
 # 数组
 list:
