@@ -18,5 +18,6 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         // 视图映射，把/hello请求映射到index页面
         registry.addViewController("/hello").setViewName("index");
+        registry.addViewController("/2").setViewName("index2");
     }
 }

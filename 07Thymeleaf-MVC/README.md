@@ -1,6 +1,8 @@
 ## 为了语法提示，导入命名空间
 `<html lang="en" xmlns:th="http://www.thymeleaf.org">`
 
+学一学差不多得了，vue不香嘛
+
 简单的demo
 ```java
 @GetMapping("/")
@@ -36,3 +38,14 @@ public String hello(Map<String,Object> map){
 5. 从attribute取值
 
    `[[${session.loginUser}]]`
+6. 公共片段抽取
+   
+   命名模板片段名=copy，引用模板使用 模版名::片段名
+   ```html
+   <!--公共部分-->
+   <div th:fragment="copy">&copy; 2024 aca</div>
+   <!--引用部分-->
+   <div th:insert="index::copy"></div>
+   <div th:insert="~{index::copy}"></div>
+   ```
+   insert、replace、include三种是有区别的：填充、替换、包含
