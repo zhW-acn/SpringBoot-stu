@@ -7,23 +7,18 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.aca</groupId>
-    <artifactId>07Thymeleaf</artifactId>
-
-    <!--切换版本-->
-    <properties>
-        <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
-        <thymeleaf-layout-dialect.version>2.2.2</thymeleaf-layout-dialect.version>
-    </properties>
+    <artifactId>CRUD</artifactId>
     <packaging>war</packaging>
-    <name>Thymeleaf Maven Webapp</name>
+    <name>CRUD Maven Webapp</name>
     <url>https://maven.apache.org</url>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
     </dependencies>
     <build>
-        <finalName>Thymeleaf</finalName>
+        <finalName>CRUD</finalName>
     </build>
 </project>
