@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/webjars/jquery/3.7.1/jquery.js}"></script>
+</head>
+<body>
+<a th:href="@{/user}">添加User</a>
+<table>
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>用户名</th>
+        <th>年龄</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+</table>
+
+<script>
+    $.ajax({
+        url: '/user.json',
+        method: 'GET',
+        dataType: 'json',
+        success: renderTable
+    })
+
+    function renderTable(data) {
+        var tbody = $("#tbody");
+
+        for (let i = 0; i < data.length; i++) {
+            var id = i + 1;
+            var operate = `<span>
+                      <button class="updBtn">修改</button>
+                      <button class="delBtn">删除</button>
+                   </span>`;
+            var row = $(
+                `<tr>
+                    <td>${id}</td>
+                    <td>${data[i].username}</td>
+                    <td>${data[i].age}</td>
+                    <td>${operate}</td>
+                </tr>`);
+            tbody.append(row);
+        }
+        $(".updBtn").on('click',function () {
+            location.href = '/user/' + $(this).closest('tr').find('td:first').text()
+        })
+        $(".delBtn").on('click',function () {
+            alert($(this).closest('tr').find('td:first').text())
+        })
+    }
+
+</script>
+</body>
+</html>

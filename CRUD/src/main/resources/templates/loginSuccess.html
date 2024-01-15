@@ -8,55 +8,6 @@
 <body>
 欢迎[[${session.loginUser}]]
 <hr>
-<button id="addBtn">添加User</button>
-<table>
-    <thead>
-    <tr>
-        <th>序号</th>
-        <th>用户名</th>
-        <th>年龄</th>
-        <th>操作</th>
-    </tr>
-    </thead>
-    <tbody id="tbody">
-
-    </tbody>
-</table>
-
-<script>
-    $.ajax({
-        url: '/user.json',
-        method: 'GET',
-        dataType: 'json',
-        success: renderTable
-    })
-
-    function renderTable(data) {
-        var tbody = $("#tbody");
-
-        for (let i = 0; i < data.length; i++) {
-            var id = i + 1;
-            var operate = `<span>
-                      <button class="updBtn">修改</button>
-                      <button class="delBtn">删除</button>
-                   </span>`;
-            var row = $(
-                `<tr>
-                    <td>${id}</td>
-                    <td>${data[i].username}</td>
-                    <td>${data[i].age}</td>
-                    <td>${operate}</td>
-                </tr>`);
-            tbody.append(row);
-        }
-        $(".updBtn").on('click',function () {
-            alert($(this).closest('tr').find('td:first').text())
-        })
-        $(".delBtn").on('click',function () {
-            alert($(this).closest('tr').find('td:first').text())
-        })
-    }
-
-</script>
+<a href="/users">点击进入</a>
 </body>
 </html>
