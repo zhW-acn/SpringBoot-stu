@@ -22,3 +22,6 @@
        mapper-locations: classpath:mapper/*.xml
      ```
    - 建mapper，写SQL
+4. @MapperScan注解
+
+   在启动类标记该注解。basePackages或value指定包名，这个包名下的所有类都标记了@Mapper注解
