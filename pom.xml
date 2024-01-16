@@ -18,6 +18,7 @@
         <module>CRUD</module>
         <module>08JDBC</module>
         <module>09JPA</module>
+        <module>10Security</module>
     </modules>
 
     <!--继承的父工程，已经定义好所有版本号-->
