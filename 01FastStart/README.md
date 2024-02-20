@@ -48,6 +48,72 @@ SpringBoot起步依赖：
    
         SpringBoot在启动的时候从类路径下的`META-INF/spring.factories`中获取EnableAutoConfiguration指定的值，将这些值作为自动配置类导入到容器中
 3. 开启SpringBoot的debug=true可在控制台查看自动配置报告
+
+
+```java
+protected AutoConfigurationEntry getAutoConfigurationEntry(AutoConfigurationMetadata autoConfigurationMetadata,
+			AnnotationMetadata annotationMetadata) {
+        // 是否启用了自动配置，如果没有，返回空
+		if (!isEnabled(annotationMetadata)) {
+			return EMPTY_ENTRY;
+		}
+        // 获取注解元信息的属性信息
+		AnnotationAttributes attributes = getAttributes(annotationMetadata);
+        // 获取候选的自动配置类列表
+		List<String> configurations = getCandidateConfigurations(annotationMetadata, attributes);
+        // 去除重复的自动配置类
+		configurations = removeDuplicates(configurations);
+        // 需要排除的自动配置类
+		Set<String> exclusions = getExclusions(annotationMetadata, attributes);
+        // 检查并移除
+		checkExcludedClasses(configurations, exclusions);
+		configurations.removeAll(exclusions);
+		configurations = filter(configurations, autoConfigurationMetadata);
+		fireAutoConfigurationImportEvents(configurations, exclusions);
+        // 返回一个新的AutoConfigurationEntry
+		return new AutoConfigurationEntry(configurations, exclusions);
+	}
+```
+
+```java
+private static Map<String, List<String>> loadSpringFactories(@Nullable ClassLoader classLoader) {
+        // 缓存中是否有类加载器
+		MultiValueMap<String, String> result = cache.get(classLoader);
+		if (result != null) {
+			return result;
+		}
+        // 缓存中没有，从FACTORIES_RESOURCE_LOCATION中获取URL
+		try {
+			Enumeration<URL> urls = (classLoader != null ?
+					classLoader.getResources(FACTORIES_RESOURCE_LOCATION) :
+					ClassLoader.getSystemResources(FACTORIES_RESOURCE_LOCATION));
+			result = new LinkedMultiValueMap<>();
+            // 遍历每个URL
+			while (urls.hasMoreElements()) {
+				URL url = urls.nextElement();
+                // 转换为properties
+				UrlResource resource = new UrlResource(url);
+				Properties properties = PropertiesLoaderUtils.loadProperties(resource);
+                // 遍历properties
+				for (Map.Entry<?, ?> entry : properties.entrySet()) {
+					String factoryClassName = ((String) entry.getKey()).trim();
+					for (String factoryName : StringUtils.commaDelimitedListToStringArray((String) entry.getValue())) {
+						// [工厂类名，工厂名称]键值对添加到result
+                        result.add(factoryClassName, factoryName.trim());
+					}
+				}
+			}
+            // 添加到缓存中
+			cache.put(classLoader, result);
+			return result;
+		}
+		catch (IOException ex) {
+			throw new IllegalArgumentException("Unable to load factories from location [" +
+					FACTORIES_RESOURCE_LOCATION + "]", ex);
+		}
+	}
+```
+
 #### 再总结
 
 ![](img/自动配置原理.png)
