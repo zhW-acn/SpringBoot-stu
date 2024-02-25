@@ -1,4 +1,0 @@
-server:
-  port: 8989
-  servlet:
-    contextPath: /aca

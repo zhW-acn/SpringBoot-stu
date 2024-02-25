@@ -7,40 +7,4 @@
     <packaging>pom</packaging>
     <name>SpringBoot-stu Maven Webapp</name>
     <url>https://maven.apache.org</url>
-    <modules>
-        <module>01FastStart</module>
-        <module>02Profile</module>
-        <module>03Junit</module>
-        <module>04mybatis</module>
-        <module>05Logger</module>
-        <module>06Resources</module>
-        <module>07Thymeleaf-MVC</module>
-        <module>CRUD</module>
-        <module>08JDBC</module>
-        <module>09JPA</module>
-        <module>10Security</module>
-    </modules>
-
-    <!--继承的父工程，已经定义好所有版本号-->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
-    </parent>
-
-    <dependencies>
-        <!--起步依赖-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
-    <build>
-        <finalName>SpringBoot-stu</finalName>
-    </build>
 </project>
