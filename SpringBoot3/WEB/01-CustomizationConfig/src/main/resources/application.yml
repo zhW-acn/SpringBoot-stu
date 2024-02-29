@@ -1,0 +1,4 @@
+spring:
+  web:
+    resources:
+      static-locations: ["classpath:/a/","classpath:/static/"] # 只有这两个静态文件文件夹

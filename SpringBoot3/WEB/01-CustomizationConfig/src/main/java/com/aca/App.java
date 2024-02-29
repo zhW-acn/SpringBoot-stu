@@ -20,7 +20,7 @@ public class App
     public static void main( String[] args )
     {
         var application = SpringApplication.run(App.class, args);
-        log.error(application.getBean("myPropertiesTest", MyProperties.class).getPerson().getName());
+        log.error(application.getBean("myPropertiesTest", MyProperties.class).toString());
         var environment = application.getEnvironment();
         var ip = "";
         try {

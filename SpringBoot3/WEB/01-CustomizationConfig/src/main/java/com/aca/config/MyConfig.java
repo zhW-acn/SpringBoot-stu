@@ -1,7 +1,6 @@
 package com.aca.config;
 
 import com.aca.properties.MyProperties;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 /**
