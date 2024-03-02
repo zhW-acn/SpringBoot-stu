@@ -1,0 +1,8 @@
+spring:
+  mvc:
+    content negotiation:
+      favor-parameter: true # 开启URL问号带参
+      media-types:
+        yaml: text/yaml # 新增媒体类型
+    problemdetails:
+      enabled: true

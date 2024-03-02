@@ -3,32 +3,20 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.aca</groupId>
-        <artifactId>SpringBoot3</artifactId>
+        <artifactId>WEB</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>WEB</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>04WebFunction</artifactId>
+    <packaging>jar</packaging>
 
-    <name>WEB</name>
+    <name>WebFunction</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>01-CustomizationConfig</module>
-        <module>02PathMatcher-MessageConvert</module>
-        <module>03ErrorHandler</module>
-        <module>04WebFunction</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 </project>
