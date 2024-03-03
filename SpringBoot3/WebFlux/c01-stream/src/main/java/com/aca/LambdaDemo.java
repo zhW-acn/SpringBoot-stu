@@ -19,7 +19,7 @@ class MyInterfaceImpl implements MyInterface {
     }
 }
 
-public class Lambda {
+public class LambdaDemo {
     public static void main(String[] args) {
         // 1.自己实现的
         MyInterface myInterface = new MyInterfaceImpl();

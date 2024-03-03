@@ -1,6 +1,5 @@
 # OpenAPI 3 与 Swagger
 > Swagger 可以快速生成**实时接口**文档，方便前后开发人员进行协调沟通。遵循 **OpenAPI** 规范。
-> 文档：[https://springdoc.org/v2/](https://springdoc.org/v2/)
 
 
 ## 2. 整合
