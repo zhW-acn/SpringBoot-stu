@@ -22,7 +22,7 @@ public class UserService {
         Integer id = Integer.valueOf(request.pathVariable("id"));
         User aca = new User(id, "aca", 18);
         // 构建响应
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_XML).body(aca);
+        return ServerResponse.ok().body(aca);
     }
 
     public ServerResponse getUsers(ServerRequest request) {

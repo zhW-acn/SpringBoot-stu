@@ -32,7 +32,7 @@ public class WebFunctionConfig {
     public RouterFunction<ServerResponse> userRoute(UserService userService) {
         return RouterFunctions.route()
                 // 定义请求类型（请求路径，头信息accept有指定MIME，调用函数）
-                .GET("/user/{id}", RequestPredicates.accept(MediaType.APPLICATION_JSON), userService::getUser)
+                .GET("/user/{id}", RequestPredicates.accept(MediaType.ALL), userService::getUser)
                 .POST("/user", userService::addUser)
                 .PUT("/user",userService::updUser)
                 .DELETE("/user/{id}",userService::delUser)

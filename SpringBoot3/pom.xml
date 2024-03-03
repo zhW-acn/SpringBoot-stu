@@ -10,6 +10,8 @@
 
     <modules>
         <module>WEB</module>
+        <module>Swagger</module>
+        <module>WebFlux</module>
     </modules>
 
     <properties>
